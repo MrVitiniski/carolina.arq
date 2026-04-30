@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolina Vitniski | Arquitetura & Interiores</title>
+    
+    <link rel="stylesheet" href="https://jsdelivr.net" />
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://unpkg.com" rel="stylesheet">
+
+    <style>
+        :root { --fendi: #A39382; --areia: #F4F1EE; --accent: #634D40; --white: #ffffff; --preto: #1a1a1a; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--areia); color: var(--preto); overflow-x: hidden; line-height: 1.6; }
+        
+        /* Hero */
+        .hero { height: 100vh; background: #000; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; position: relative; }
+        .hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+        .hero-content { position: relative; z-index: 10; }
+        .hero h1 { font-family: 'Cormorant Garamond'; font-size: clamp(3rem, 7vw, 5rem); font-weight: 300; margin-bottom: 10px; }
+        .hero p { letter-spacing: 5px; text-transform: uppercase; font-size: 0.75rem; opacity: 0.9; }
+
+        /* Seção Sobre (Filosofia) */
+        .about-section { padding: 120px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; background: var(--white); }
+        .about-text h2 { font-family: 'Cormorant Garamond'; font-size: 3rem; margin-bottom: 30px; font-weight: 400; color: var(--accent); }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: #555; text-align: justify; }
+        .about-image img { width: 100%; height: 600px; object-fit: cover; border-radius: 2px; }
+
+        /* Portfólio Grid */
+        .portfolio-section { padding: 100px 5%; background: var(--areia); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-family: 'Cormorant Garamond'; font-size: 2.5rem; letter-spacing: 2px; }
+        
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .project-item { position: relative; height: 500px; cursor: pointer; overflow: hidden; }
+        .project-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s ease; }
+        .project-item:hover img { transform: scale(1.1); filter: brightness(0.7); }
+        .project-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; opacity: 0; transition: 0.5s; text-align: center; padding: 20px; }
+        .project-item:hover .project-overlay { opacity: 1; }
+        .project-overlay h3 { font-family: 'Cormorant Garamond'; font-size: 2rem; margin-bottom: 10px; }
+
+        /* WhatsApp Flutuante de Luxo */
+        .whatsapp-link { 
+            position: fixed; bottom: 40px; right: 40px; background: var(--preto); color: white; 
+            padding: 15px 25px; border-radius: 50px; text-decoration: none; display: flex; 
+            align-items: center; gap: 12px; z-index: 9999; transition: 0.4s; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); font-size: 0.8rem; letter-spacing: 1px; font-weight: 400;
+        }
+        .whatsapp-link:hover { transform: translateY(-5px); background: #25D366; }
+        .whatsapp-link svg { fill: white; width: 20px; }
+
+        /* Galeria Modal */
+        .modal { display: none; position: fixed; inset: 0; background: #fff; z-index: 10000; align-items: center; }
+        .close-modal { position: absolute; top: 30px; right: 40px; font-size: 40px; cursor: pointer; z-index: 10001; }
+        .swiper { width: 100%; height: 85vh; }
+        .swiper-slide img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        @media (max-width: 1024px) {
+            .about-section { grid-template-columns: 1fr; padding: 80px 5%; text-align: center; }
+            .about-image { order: -1; }
+            .about-image img { height: 400px; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .whatsapp-link { bottom: 20px; right: 20px; padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="https://unsplash.com">
+        <div class="hero-content">
+            <h1 data-aos="fade-up">Carolina Vitniski</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Arquitetura & Interiores</p>
+        </div>
+    </section>
+
+    <!-- Sobre / Filosofia -->
+    <section class="about-section">
+        <div class="about-text" data-aos="fade-right">
+            <h2>Arquitetura com Propósito</h2>
+            <p>Acreditamos que cada espaço conta uma história única. O trabalho de <strong>Carolina Vitniski</strong> é focado na criação de ambientes que equilibram estética contemporânea e o máximo conforto.</p>
+            <p>Nossa filosofia busca integrar a personalidade do cliente a soluções arquitetônicas atemporais, priorizando materiais naturais, luz e fluidez.</p>
+        </div>
+        <div class="about-image" data-aos="fade-left">
+            <img src="imagens/perfil.jpg" alt="Carolina Vitniski">
+        </div>
+    </section>
+
+    <!-- Portfólio -->
+    <section class="portfolio-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Projetos Selecionados</h2>
+        </div>
+        <div class="grid-3">
+            <!-- Projeto 1 -->
+            <div class="project-item" data-aos="fade-up" onclick="abrirGaleria(['https://unsplash.com', 'https://unsplash.com'])">
+                <img src="imagens/7.jpg">
+                <div class="project-overlay"><h3>Lawyer Space</h3><p>Ver Galeria</p></div>
+            </div>
+            <!-- Projeto 2 -->
+            <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="abrirGaleria(['imagens/2.png', 'imagens/3.png'])">
+                <img src="imagens/1.png">
+                <div class="project-overlay"><h3>Baby's Room</h3><p>Ver Galeria</p></div>
+            </div>
+            <!-- Projeto 3 -->
+            <div class="project-item" data-aos="fade-up" data-aos-delay="200" onclick="abrirGaleria(['https://unsplash.com', 'https://unsplash.com'])">
+                <img src="imagens/5.jpg">
+                <div class="project-overlay"><h3>Casa de Campo</h3><p>Ver Galeria</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botão WhatsApp -->
+         <a href="https://wa.me/5548996593621?text=Olá, Gostaria de realizar mu projeto" class="whatsapp-link" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.267.405 2.455 1.083 3.407l-.718 2.639 2.703-.71c.919.565 1.987.896 3.129.896 3.182 0 5.767-2.586 5.767-5.767 0-3.181-2.586-5.767-5.767-5.767zm3.349 8.163c-.149.423-.741.764-1.21.831-.326.047-.75.086-1.921-.397-1.498-.617-2.458-2.144-2.533-2.244-.075-.1-.611-.812-.611-1.548 0-.735.385-1.097.521-1.248.136-.151.298-.189.397-.189.1 0 .201.001.288.005.089.004.208-.034.324.248.117.283.402.98.437 1.054.035.074.058.16.009.259-.049.099-.074.159-.148.245-.074.085-.156.19-.223.255-.074.074-.151.155-.065.303.086.148.384.633.824 1.026.566.505 1.042.662 1.191.736.149.074.235.062.321-.037.086-.1.371-.433.471-.582.1-.15.2-.124.335-.074.135.05.856.404 1.005.478.149.074.248.111.284.174.037.062.037.362-.112.785z"/></svg>
+        <span>SOLICITAR ORÇAMENTO</span>
+    </a>
+
+    <!-- Galeria Modal -->
+    <div id="modalGaleria" class="modal">
+        <span class="close-modal" onclick="fecharGaleria()">&times;</span>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="wrapperFotos"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <script src="https://jsdelivr.net"></script>
+    <script src="https://unpkg.com"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        let swiper = null;
+
+        function abrirGaleria(fotos) {
+            const wrapper = document.getElementById('wrapperFotos');
+            wrapper.innerHTML = fotos.map(f => `<div class="swiper-slide"><img src="${f}"></div>`).join('');
+            document.getElementById('modalGaleria').style.display = 'flex';
+            if(swiper) swiper.destroy();
+            swiper = new Swiper(".mySwiper", {
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                pagination: { el: ".swiper-pagination", clickable: true },
+                grabCursor: true, keyboard: true
+            });
+        }
+        function fecharGaleria() { document.getElementById('modalGaleria').style.display = 'none'; }
+    </script>
+</body>
+</html>
