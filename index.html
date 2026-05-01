@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Carolina Vitniski - Arquitetura de Luxo e Interiores Contemporâneos.">
     <title>Carolina Vitniski | Arquitetura & Interiores</title>
-    
-    <!-- Fonts Apple Style (Inter + Cormorant) -->
+
+    <!-- Google Fonts - Corrigido para carregar no GitHub -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
@@ -17,7 +17,6 @@
 </head>
 <body>
 
-    <!-- Header Glassmorphism -->
     <header class="main-header">
         <div class="header-container">
             <span class="logo">CV</span>
@@ -28,10 +27,9 @@
     </header>
 
     <main>
-        <!-- HERO: Imersão Suave -->
         <section class="hero">
             <div class="hero-image-container">
-                <img src="imagens/a.png" class="hero-bg" alt="">
+                <img src="imagens/a.png" class="hero-bg" alt="Hero Background">
             </div>
             <div class="hero-content reveal">
                 <p class="eyebrow">Arquitetura & Interiores</p>
@@ -39,7 +37,6 @@
             </div>
         </section>
 
-        <!-- SOBRE: Estilo Editorial -->
         <section class="about-section">
             <div class="container-editorial">
                 <div class="about-grid">
@@ -54,14 +51,12 @@
             </div>
         </section>
 
-        <!-- PORTFÓLIO: Grid Curado (Apple Style) -->
         <section class="portfolio-section">
             <div class="container-editorial">
                 <div class="portfolio-header reveal">
                     <h3>PROJETOS SELECIONADOS</h3>
                 </div>
 
-                <!-- Projeto 1 -->
                 <div class="project-block reveal">
                     <div class="project-visual" onclick="abrirGaleria(['imagens/8.jpg','imagens/7.jpg','imagens/7-8.jpg'])">
                         <img src="imagens/8.jpg" alt="Lawyer Space">
@@ -73,7 +68,6 @@
                     </div>
                 </div>
 
-                <!-- Projeto 2 -->
                 <div class="project-block reveal reverse">
                     <div class="project-visual" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
                         <img src="imagens/1.png" alt="Baby's Room">
@@ -85,7 +79,6 @@
                     </div>
                 </div>
 
-                <!-- Projeto 3 -->
                 <div class="project-block reveal">
                     <div class="project-visual" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
                         <img src="imagens/5.jpg" alt="Casa de Campo">
@@ -100,18 +93,10 @@
         </section>
     </main>
 
-    <!-- WhatsApp -->
-    <a href="https://wa.me/5548996593621?text=Ola%2C%20Carolina%20que%20tal%20realizarmos%20mais%20um%20projeto%3F" 
-   class="whatsapp-float" 
-   target="_blank">
+    <a href="https://wa.me/5548996593621" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.267.405 2.455 1.083 3.407l-.718 2.639 2.703-.71c.919.565 1.987.896 3.129.896 3.182 0 5.767-2.586 5.767-5.767 0-3.181-2.586-5.767-5.767-5.767zm3.349 8.163c-.149.423-.741.764-1.21.831-.326.047-.75.086-1.921-.397-1.498-.617-2.458-2.144-2.533-2.244-.075-.1-.611-.812-.611-1.548 0-.735.385-1.097.521-1.248.136-.151.298-.189.397-.189.1 0 .201.001.288.005.089.004.208-.034.324.248.117.283.402.98.437 1.054.035.074.058.16.009.259-.049.099-.074.159-.148.245-.074.085-.156.19-.223.255-.074.074-.151.155-.065.303.086.148.384.633.824 1.026.566.505 1.042.662 1.191.736.149.074.235.062.321-.037.086-.1.371-.433.471-.582.1-.15.2-.124.335-.074.135.05.856.404 1.005.478.149.074.248.111.284.174.037.062.037.362-.112.785z"/></svg>
+    </a>
 
-    <svg viewBox="0 0 24 24">
-        <path d="M20.52 3.48A11.88 11.88 0 0012.06 0C5.52 0 .19 5.33.19 11.87c0 2.1.55 4.15 1.6 5.95L0 24l6.36-1.66a11.86 11.86 0 005.7 1.45h.01c6.54 0 11.87-5.33 11.87-11.87a11.8 11.8 0 00-3.42-8.44zM12.07 21.6a9.7 9.7 0 01-4.94-1.35l-.35-.21-3.77.98 1.01-3.67-.23-.37a9.7 9.7 0 01-1.5-5.17c0-5.36 4.36-9.72 9.73-9.72 2.6 0 5.04 1.01 6.88 2.85a9.66 9.66 0 012.85 6.88c0 5.36-4.36 9.72-9.72 9.72zm5.34-7.28c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.65.15-.19.29-.75.95-.91 1.15-.17.19-.33.22-.62.07-.29-.15-1.22-.45-2.33-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.33.43-.49.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.65-1.57-.9-2.15-.24-.58-.48-.5-.65-.51-.17-.01-.36-.01-.55-.01-.19 0-.51.07-.78.36-.27.29-1.04 1.02-1.04 2.48 0 1.45 1.06 2.85 1.21 3.05.15.19 2.08 3.18 5.03 4.46.7.3 1.24.48 1.66.61.7.22 1.33.19 1.83.12.56-.08 1.72-.7 1.96-1.37.24-.67.24-1.24.17-1.37-.07-.13-.26-.19-.55-.34z"/>
-    </svg>
-
-</a>
-
-    <!-- MODAL -->
     <div id="modalGaleria" class="modal">
         <span class="close-modal" onclick="fecharGaleria()">✕ FECHAR</span>
         <div class="swiper mySwiper">
@@ -127,10 +112,8 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Modal & Swiper
         let swiperInstance = null;
         function abrirGaleria(fotos) {
             const wrapper = document.getElementById('wrapperFotos');
@@ -150,7 +133,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Observer para Transições Suaves
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) entry.target.classList.add('active');
