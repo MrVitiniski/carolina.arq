@@ -1,176 +1,279 @@
-:root { 
-    --fendi: #A39382; 
-    --areia: #EAE0D5; 
-    --preto: #000000; 
-    --dourado: #C5A059; 
-    --overlay: rgba(0, 0, 0, 0.9);
+:root {
+    --areia: #F4F1EE;
+    --accent: #634D40;
+    --preto: #0b0b0b;
+    --white: #ffffff;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    background: var(--areia); 
-    color: var(--preto); 
-    overflow-x: hidden; 
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1, h2, h3 { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-weight: 300; 
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--areia);
+    color: var(--preto);
+    letter-spacing: 0.3px;
 }
 
-/* Hero Section */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    position: relative; 
-    overflow: hidden; 
+/* HERO */
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
-.ken-burns { 
-    position: absolute; 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    animation: kenburns 20s infinite alternate; 
-    z-index: -1; 
-}
-
-@keyframes kenburns { 
-    from { transform: scale(1); } 
-    to { transform: scale(1.15); } 
-}
-
-.cta-button { 
-    padding: 15px 40px; 
-    border: 1px solid white; 
-    color: white; 
-    text-decoration: none; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    font-size: 0.8rem; 
-    transition: 0.4s; 
-    background: rgba(0,0,0,0.2); 
-    backdrop-filter: blur(5px); 
-}
-
-.cta-button:hover { background: white; color: var(--preto); }
-
-/* Grid Portfolio */
-.portfolio .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 20px; 
-    padding: 40px; 
-}
-
-.grid-item { 
-    position: relative; 
-    overflow: hidden; 
-    cursor: pointer;
-    height: 450px; /* Altura fixa para manter o padrão */
-}
-
-.grid-item img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    filter: grayscale(100%); 
-    transition: 1s cubic-bezier(0.17, 0.67, 0.83, 0.67); 
-}
-
-.grid-item:hover img { 
-    filter: grayscale(0%); 
-    transform: scale(1.05); 
-}
-
-/* Overlay do Projeto (Texto que aparece ao passar o mouse) */
-.project-info {
+.hero-bg {
     position: absolute;
-    bottom: 0; left: 0; width: 100%;
-    padding: 30px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: zoom 20s infinite alternate;
+    filter: brightness(0.85);
+}
+
+@keyframes zoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.75)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
     color: white;
-    opacity: 0;
-    transition: 0.5s;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
 }
 
-.grid-item:hover .project-info { opacity: 1; }
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 300;
+    letter-spacing: -2px;
+    text-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
 
-/* GALERIA ESTILO INSTAGRAM (SUBSTITUA A PARTIR DAQUI) */
-.modal { 
-    display: none; 
-    position: fixed; 
-    inset: 0; 
-    background: #000000; /* Fundo preto estilo Instagram */
-    z-index: 10000; 
-    align-items: center; 
+.hero p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* SOBRE */
+.about-section {
+    padding: 140px 10%;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    background: var(--white);
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    box-shadow: 30px 30px 0 var(--areia);
+}
+
+/* PORTFÓLIO */
+.portfolio-section {
+    padding: 160px 10%;
+}
+
+/* layout alternado */
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 140px;
+}
+
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* imagem */
+.project-image {
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.project-image:hover img {
+    transform: scale(1.06);
+}
+
+/* texto */
+.project-text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.project-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+}
+
+.project-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #555;
+}
+
+/* GALERIA (AQUI ESTÁ A MÁGICA) */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* efeito refinado */
+.project-gallery img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    transition: 0.4s;
 }
 
-.close-modal { 
-    position: absolute; 
-    top: 20px; 
-    right: 30px; 
-    color: #ffffff; 
-    font-size: 40px; 
-    cursor: pointer; 
-    z-index: 10001; 
-    font-family: Arial, sans-serif;
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #25D366;
 }
 
-.swiper { 
-    width: 100%; 
-    height: 100vh; 
+.whatsapp-float svg {
+    width: 28px;
+    fill: white;
 }
 
-.swiper-slide { 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    padding: 20px;
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
 }
 
-.swiper-slide img { 
-    max-width: 100%; 
-    max-height: 90vh; /* Foto grande mas sem encostar nas bordas */
-    object-fit: contain; 
-    border-radius: 4px; /* Leve arredondamento elegante */
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: white;
+    cursor: pointer;
 }
 
-/* Setas e Pontinhos de Navegação Brancos */
-.swiper-button-next, .swiper-button-prev { 
-    color: #ffffff !important; 
-    opacity: 0.5;
+.swiper-slide img {
+    max-width: 95%;
+    max-height: 80vh;
+    object-fit: contain;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-    font-size: 25px; /* Setas mais discretas */
-}
+/* MOBILE */
+@media (max-width: 768px) {
 
-.swiper-pagination-bullet { 
-    background: #ffffff !important; 
-}
+    .hero {
+        height: 85vh;
+    }
 
-/* WHATSAPP FLOAT (Mantenha este se quiser o ícone flutuante) */
-.whatsapp-float { 
-    position: fixed; 
-    bottom: 30px; 
-    right: 30px; 
-    background: #25D366; /* Verde oficial do Zap */
-    width: 55px; 
-    height: 55px; 
-    border-radius: 50%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-    z-index: 999; 
-    transition: 0.3s;
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-image img {
+        box-shadow: 15px 15px 0 var(--areia);
+    }
+
+    .project-row,
+    .project-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 80px;
+    }
+
+    .project-image img {
+        height: 300px;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-gallery img {
+        height: 140px;
+    }
 }
-.whatsapp-float:hover { transform: scale(1.1); }
