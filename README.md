@@ -9,7 +9,7 @@ unindo sofisticação à funcionalidade comercial.
 
 ## 🌐 Visualize o projeto:
 
-🔗 **[Ver Projeto Online](https://Mrvitiniski.github.iocarolina.arq/)**
+🔗 **[Ver Projeto Online](https://Mrvitiniski.github.io/carolina.arq/)**
 
 
 
