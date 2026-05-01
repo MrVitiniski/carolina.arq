@@ -7,15 +7,11 @@
 
 <title>Carolina Vitniski | Arquitetura & Interiores</title>
 
-<!-- Fonts CORRIGIDAS -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- AOS -->
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<!-- Swiper -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
 <link rel="stylesheet" href="style.css">
@@ -25,10 +21,10 @@
 
 <!-- HERO -->
 <section class="hero">
-    <img src="imagens/a.png" class="hero-bg" alt="Arquitetura de Luxo">
+    <img src="imagens/a.png" class="hero-bg parallax" alt="">
     <div class="hero-overlay"></div>
 
-    <div class="hero-content">
+    <div class="hero-content reveal">
         <h1>Carolina Vitniski</h1>
         <p>Arquitetura & Interiores</p>
     </div>
@@ -36,71 +32,68 @@
 
 <!-- SOBRE -->
 <section class="about-section">
-    <div class="about-text" data-aos="fade-right">
+    <div class="about-text reveal">
         <h2>Espaços que traduzem sua essência.</h2>
         <p>Com foco no minimalismo contemporâneo, Carolina Vitniski cria refúgios que unem sofisticação e conforto absoluto.</p>
     </div>
 
-    <div class="about-image" data-aos="fade-left">
-        <img src="imagens/perfil.jpg" alt="Carolina Vitniski">
+    <div class="about-image reveal reveal-delay-1">
+        <img src="imagens/perfil.jpg" alt="">
     </div>
 </section>
 
-<!-- PORTFÓLIO NOVO (layout premium alternado) -->
+<!-- PORTFÓLIO -->
 <section class="portfolio-section">
 
-    <div class="project-row" data-aos="fade-up">
+    <!-- Projeto 1 -->
+    <div class="project-row reveal">
+        <div class="project-image" onclick="abrirGaleria(['imagens/7.jpg','imagens/7-8.jpg'])">
+            <img src="imagens/8.jpg">
+        </div>
 
-    <!-- IMAGEM PRINCIPAL -->
-    <div class="project-image" onclick="abrirGaleria(['imagens/7.jpg','imagens/7-8.jpg'])">
-        <img src="imagens/8.jpg">
-    </div>
+        <div class="project-text">
+            <h2>Lawyer Space</h2>
+            <p>Projeto corporativo com estética refinada e identidade profissional marcante.</p>
 
-    <!-- TEXTO + GALERIA -->
-    <div class="project-text">
-        <h2>Lawyer Space</h2>
-        <p>Projeto corporativo com estética refinada e identidade profissional marcante.</p>
-
-        <!-- GALERIA -->
-        <div class="project-gallery">
-            <img src="imagens/7.jpg">
-            
+            <div class="project-gallery">
+                <img src="imagens/7.jpg" onclick="abrirGaleria(['imagens/7.jpg','imagens/7-8.jpg'])">
+            </div>
         </div>
     </div>
 
-</div>
-
     <!-- Projeto 2 -->
-    <div class="project-row reverse" data-aos="fade-up">
+    <div class="project-row reverse reveal reveal-delay-1">
         <div class="project-image" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
             <img src="imagens/1.png">
         </div>
+
         <div class="project-text">
             <h2>Baby Room</h2>
             <p>Ambiente acolhedor e sensível, pensado para proporcionar conforto e tranquilidade.</p>
-            <!-- GALERIA -->
-        <div class="project-gallery">
-            <img src="imagens/2.png">
-            <img src="imagens/3.png">
-            <img src="imagens/4.png">
-        </div>
+
+            <div class="project-gallery">
+                <img src="imagens/2.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
+                <img src="imagens/3.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
+                <img src="imagens/4.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
+            </div>
         </div>
     </div>
 
     <!-- Projeto 3 -->
-    <div class="project-row" data-aos="fade-up">
-        <div class="project-image" onclick="abrirGaleria(['imagens/5.jpg'])">
+    <div class="project-row reveal reveal-delay-2">
+        <div class="project-image" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
             <img src="imagens/5.jpg">
         </div>
+
         <div class="project-text">
             <h2>Casa de Campo</h2>
             <p>Integração entre natureza e arquitetura com materiais naturais e design contemporâneo.</p>
-             <!-- GALERIA -->
-        <div class="project-gallery">
-            <img src="imagens/5.jpg">
-            <img src="imagens/a.png">
-            <img src="imagens/6.jpg">
-        </div>
+
+            <div class="project-gallery">
+                <img src="imagens/5.jpg" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
+                <img src="imagens/a.png" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
+                <img src="imagens/6.jpg" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
+            </div>
         </div>
     </div>
 
@@ -109,7 +102,7 @@
 <!-- WHATSAPP -->
 <a href="https://wa.me/5599999999999" class="whatsapp-float" target="_blank">
     <svg viewBox="0 0 24 24">
-        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767 0 1.267.405 2.455 1.083 3.407l-.718 2.639 2.703-.71c.919.565 1.987.896 3.129.896 3.182 0 5.767-2.586 5.767-5.767"/>
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.767 5.767"/>
     </svg>
 </a>
 
@@ -124,7 +117,7 @@
     </div>
 </div>
 
-<!-- JS CORRIGIDO -->
+<!-- JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -155,7 +148,36 @@ function fecharGaleria() {
     document.getElementById('modalGaleria').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+
+/* REVEAL + PARALLAX */
+const elements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.2 });
+
+elements.forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    document.querySelectorAll('.parallax').forEach(el => {
+        el.style.transform = `translateY(${scrollY * 0.1}px)`;
+    });
+});
 </script>
 
+<footer class="main-footer">
+    <div class="footer-container">
+                
+        <p class="copyright">
+            &copy; 2026 Carolina Vitniski. Todos os direitos reservados.
+        </p>
+        <p class="dev-by">powered by <span>VN systems</span></p>
+    </div>
+</footer>
 </body>
 </html>
