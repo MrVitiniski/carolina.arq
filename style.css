@@ -1,373 +1,118 @@
+/* ============================================================
+   ESTÉTICA PREMIUM - CAROLINA VITNISKI
+   ============================================================ */
+
 :root {
-    --areia: #F4F1EE;
-    --accent: #634D40;
-    --preto: #0b0b0b;
-    --white: #ffffff;
+    --bg-light: #FBFBFD; /* Cor oficial Apple background */
+    --white: #FFFFFF;
+    --preto: #1D1D1F; /* Cor oficial Apple text */
+    --fendi: #A39382;
+    --grey-sub: #86868B;
+    --glass: rgba(251, 251, 253, 0.8);
+    --transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background: var(--areia);
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-light);
     color: var(--preto);
-    letter-spacing: 0.3px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/* SCROLL SUAVE */
-html {
-    scroll-behavior: smooth;
+.container-editorial { width: 90%; max-width: 1400px; margin: 0 auto; }
+
+/* HEADER */
+.main-header {
+    position: fixed; top: 0; width: 100%; height: 50px;
+    z-index: 1000; background: var(--glass);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex; align-items: center;
 }
+.header-container { width: 90%; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Cormorant Garamond', serif; letter-spacing: 5px; font-weight: 300; }
+.nav-desktop a { text-decoration: none; color: var(--preto); font-size: 0.7rem; letter-spacing: 2px; font-weight: 500; }
 
 /* HERO */
 .hero {
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
+    height: 100vh; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    background: #000;
 }
+.hero-image-container { position: absolute; inset: 0; opacity: 0.6; }
+.hero-bg { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); animation: heroScale 20s infinite alternate; }
+@keyframes heroScale { to { transform: scale(1); } }
 
-.hero-bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: zoom 20s infinite alternate;
-    filter: brightness(0.85);
-    will-change: transform;
-}
+.hero-content { position: relative; z-index: 10; text-align: center; color: var(--white); }
+.eyebrow { font-size: 0.65rem; letter-spacing: 8px; margin-bottom: 20px; opacity: 0.8; font-weight: 300; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 300; font-style: italic; }
 
-@keyframes zoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.1); }
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.3),
-        rgba(0,0,0,0.8)
-    );
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 20px;
-}
-
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 300;
-    letter-spacing: -2px;
-    text-shadow: 0 10px 40px rgba(0,0,0,0.6);
-}
-
-.hero p {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-/* SOBRE */
-.about-section {
-    padding: 140px 10%;
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    background: var(--white);
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    margin-bottom: 30px;
-    line-height: 1.1;
-}
-
-.about-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #444;
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    max-height: 650px;
-    object-fit: cover;
-    box-shadow: 30px 30px 0 var(--areia);
-}
+/* SEÇÃO SOBRE */
+.about-section { padding: clamp(80px, 15vh, 160px) 0; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.about-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 30px; font-weight: 400; line-height: 1.1; }
+.about-text p { color: var(--grey-sub); font-size: 1.1rem; max-width: 480px; }
+.about-image img { width: 100%; border-radius: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
 
 /* PORTFÓLIO */
-.portfolio-section {
-    padding: 160px 10%;
-}
+.portfolio-section { padding-bottom: 120px; }
+.portfolio-header h3 { font-size: 0.7rem; letter-spacing: 5px; color: var(--fendi); margin-bottom: 60px; text-align: center; }
 
-/* layout alternado */
-.project-row {
-    display: flex;
-    align-items: center;
-    gap: 100px;
-    margin-bottom: 140px;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding-bottom: 80px;
+.project-block { 
+    display: flex; align-items: center; gap: 60px; margin-bottom: 120px;
 }
+.project-block.reverse { flex-direction: row-reverse; }
 
-.project-row.reverse {
-    flex-direction: row-reverse;
+.project-visual { 
+    flex: 1.5; overflow: hidden; border-radius: 24px; cursor: pointer; position: relative;
+    background: #eee; aspect-ratio: 16/10;
 }
+.project-visual img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+.project-visual:hover img { transform: scale(1.05); }
 
-/* imagem */
-.project-image {
-    flex: 1;
-    overflow: hidden;
-    cursor: pointer;
+.project-overlay {
+    position: absolute; inset: 0; background: rgba(0,0,0,0.2); 
+    display: flex; align-items: center; justify-content: center; opacity: 0; transition: var(--transition);
 }
+.project-visual:hover .project-overlay { opacity: 1; backdrop-filter: blur(5px); }
+.project-overlay span { color: #fff; font-size: 0.6rem; letter-spacing: 4px; border: 1px solid #fff; padding: 12px 25px; }
 
-.project-image img {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    transition: transform 1.4s cubic-bezier(0.2, 1, 0.3, 1),
-                filter 1s ease;
-}
+.project-info { flex: 1; }
+.project-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; margin-bottom: 15px; }
+.project-info p { color: var(--grey-sub); font-size: 0.95rem; }
 
-.project-image:hover img {
-    transform: scale(1.08);
-    filter: brightness(0.9);
-}
+/* REVEAL SYSTEM (Transitions) */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1); will-change: transform, opacity; }
+.reveal.active { opacity: 1; transform: translateY(0); }
 
-/* texto */
-.project-text {
-    flex: 1;
-    max-width: 520px;
-}
-
-.project-text h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    margin-bottom: 20px;
-    letter-spacing: -0.5px;
-}
-
-.project-text p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: #555;
-    opacity: 0.85;
-}
-
-/* GALERIA */
-.project-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.project-gallery img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.project-gallery img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-/* WHATSAPP */
+/* WHATSAPP & FOOTER */
 .whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.4s;
+    position: fixed; bottom: 30px; right: 30px; background: var(--preto); width: 60px; height: 60px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 999;
+    transition: 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+.whatsapp-float:hover { transform: scale(1.1); background: #25D366; }
+.whatsapp-float svg { width: 25px; fill: #fff; }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background: #25D366;
-}
-
-.whatsapp-float svg {
-    width: 28px;
-    fill: white;
-}
+.main-footer { padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05); text-align: center; }
+.main-footer p { font-size: 0.7rem; color: var(--grey-sub); letter-spacing: 1px; }
+.main-footer span { font-weight: 600; color: var(--preto); }
 
 /* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 9999;
-}
+.modal { display: none; position: fixed; inset: 0; background: var(--white); z-index: 2000; align-items: center; }
+.close-modal { position: absolute; top: 40px; right: 40px; font-size: 0.7rem; letter-spacing: 3px; cursor: pointer; z-index: 10; }
+.swiper { width: 90%; height: 80vh; }
+.swiper-slide img { width: 100%; height: 100%; object-fit: contain; }
 
-.close-modal {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    color: white;
-    cursor: pointer;
-}
-
-.swiper-slide img {
-    max-width: 95%;
-    max-height: 80vh;
-    object-fit: contain;
-}
-
-/* ANIMAÇÃO CINEMATOGRÁFICA */
-.reveal {
-    opacity: 0;
-    transform: translateY(60px);
-    transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-delay-1 { transition-delay: 0.2s; }
-.reveal-delay-2 { transition-delay: 0.4s; }
-
-/* PARALLAX */
-.parallax {
-    transition: transform 0.2s linear;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-
-    .hero {
-        height: 85vh;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .about-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .about-image img {
-        box-shadow: 15px 15px 0 var(--areia);
-    }
-
-    .project-row,
-    .project-row.reverse {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        margin-bottom: 80px;
-    }
-
-    .project-image img {
-        height: 300px;
-    }
-
-    .project-gallery {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .project-gallery img {
-        height: 140px;
-    }
-}
-<!--rodapé-->
-
-/* =============================================
-   7. FOOTER (DESIGN MINIMALISTA & PREMIUM)
-   ============================================= */
-.main-footer {
-    padding: 60px 20px;
-    background: #01050d; /* Azul profundo condizente com o site */
-    text-align: center;
-    position: relative;
-}
-
-/* Linha decorativa com degradê no topo do rodapé */
-.main-footer::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--glass-border), transparent);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.footer-container p {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 400;
-    color: rgba(1, 1, 27, 0.767); /* Texto mais suave */
-}
-
-/* Estilo para sua marca no 'by VN systems' */
-.dev-by {
-    font-size: 10px !important;
-    opacity: 0.8;
-}
-
-.dev-by span {
-    color: var(--primary); /* Verde Scavare */
-    font-weight: 700;
-    margin-left: 5px;
-    transition: 0.3s;
-}
-
-.dev-by:hover span {
-    text-shadow: 0 0 10px rgba(118, 188, 33, 0.5);
-}
-
-/* Ajuste Mobile */
-@media (max-width: 768px) {
-    .main-footer {
-        padding: 40px 20px;
-    }
+/* MOBILE RESPONSIVE (iPhone) */
+@media (max-width: 968px) {
+    .about-grid, .project-block, .project-block.reverse { grid-template-columns: 1fr; flex-direction: column; text-align: center; gap: 40px; }
+    .container-editorial { width: 85%; }
+    .about-text p { margin: 0 auto; }
+    .project-visual { width: 100%; aspect-ratio: 4/5; }
+    .project-info h4 { font-size: 1.8rem; }
 }
