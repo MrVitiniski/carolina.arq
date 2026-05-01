@@ -1,105 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Carolina Vitniski - Arquitetura de Luxo e Interiores Contemporâneos.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Carolina Vitniski - Arquitetura de Luxo e Interiores Contemporâneos.">
+    <title>Carolina Vitniski | Arquitetura & Interiores</title>
+    
+    <!-- Fonts Apple Style (Inter + Cormorant) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
 
-<title>Carolina Vitniski | Arquitetura & Interiores</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-<link rel="stylesheet" href="style.css">
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-    <img src="imagens/a.png" class="hero-bg parallax" alt="">
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content reveal">
-        <h1>Carolina Vitniski</h1>
-        <p>Arquitetura & Interiores</p>
-    </div>
-</section>
-
-<!-- SOBRE -->
-<section class="about-section">
-    <div class="about-text reveal">
-        <h2>Espaços que traduzem sua essência.</h2>
-        <p>Com foco no minimalismo contemporâneo, Carolina Vitniski cria refúgios que unem sofisticação e conforto absoluto.</p>
-    </div>
-
-    <div class="about-image reveal reveal-delay-1">
-        <img src="imagens/perfil.jpg" alt="">
-    </div>
-</section>
-
-<!-- PORTFÓLIO -->
-<section class="portfolio-section">
-
-    <!-- Projeto 1 -->
-    <div class="project-row reveal">
-        <div class="project-image" onclick="abrirGaleria(['imagens/7.jpg','imagens/7-8.jpg'])">
-            <img src="imagens/8.jpg">
+    <!-- Header Glassmorphism -->
+    <header class="main-header">
+        <div class="header-container">
+            <span class="logo">CV</span>
+            <nav class="nav-desktop">
+                <a href="https://wa.me/5548996593621" target="_blank">CONTATO</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="project-text">
-            <h2>Lawyer Space</h2>
-            <p>Projeto corporativo com estética refinada e identidade profissional marcante.</p>
-
-            <div class="project-gallery">
-                <img src="imagens/7.jpg" onclick="abrirGaleria(['imagens/7.jpg','imagens/7-8.jpg'])">
+    <main>
+        <!-- HERO: Imersão Suave -->
+        <section class="hero">
+            <div class="hero-image-container">
+                <img src="imagens/a.png" class="hero-bg" alt="">
             </div>
-        </div>
-    </div>
-
-    <!-- Projeto 2 -->
-    <div class="project-row reverse reveal reveal-delay-1">
-        <div class="project-image" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
-            <img src="imagens/1.png">
-        </div>
-
-        <div class="project-text">
-            <h2>Baby's Room</h2>
-            <p>Ambiente acolhedor e sensível, pensado para proporcionar conforto e tranquilidade.</p>
-
-            <div class="project-gallery">
-                <img src="imagens/2.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
-                <img src="imagens/3.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
-                <img src="imagens/4.png" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
+            <div class="hero-content reveal">
+                <p class="eyebrow">Arquitetura & Interiores</p>
+                <h1>Carolina Vitniski</h1>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Projeto 3 -->
-    <div class="project-row reveal reveal-delay-2">
-        <div class="project-image" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
-            <img src="imagens/5.jpg">
-        </div>
-
-        <div class="project-text">
-            <h2>Casa de Campo</h2>
-            <p>Integração entre natureza e arquitetura com materiais naturais e design contemporâneo.</p>
-
-            <div class="project-gallery">
-                <img src="imagens/5.jpg" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
-                <img src="imagens/a.png" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
-                <img src="imagens/6.jpg" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
+        <!-- SOBRE: Estilo Editorial -->
+        <section class="about-section">
+            <div class="container-editorial">
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <h2>Espaços que traduzem sua essência.</h2>
+                        <p>Acreditamos na arquitetura como uma extensão da alma. O trabalho de <strong>Carolina Vitniski</strong> foca na pureza das formas e na verdade dos materiais, criando refúgios atemporais.</p>
+                    </div>
+                    <div class="about-image reveal">
+                        <img src="imagens/perfil.jpg" alt="Carolina Vitniski">
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-</section>
+        <!-- PORTFÓLIO: Grid Curado (Apple Style) -->
+        <section class="portfolio-section">
+            <div class="container-editorial">
+                <div class="portfolio-header reveal">
+                    <h3>PROJETOS SELECIONADOS</h3>
+                </div>
 
-<a href="https://wa.me/5548996593621?text=Ola%2C%20Carolina%20que%20tal%20realizarmos%20mais%20um%20projeto%3F" 
+                <!-- Projeto 1 -->
+                <div class="project-block reveal">
+                    <div class="project-visual" onclick="abrirGaleria(['imagens/8.jpg','imagens/7.jpg','imagens/7-8.jpg'])">
+                        <img src="imagens/8.jpg" alt="Lawyer Space">
+                        <div class="project-overlay"><span>EXPLORAR</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Lawyer Space</h4>
+                        <p>Projeto corporativo com estética refinada.</p>
+                    </div>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="project-block reveal reverse">
+                    <div class="project-visual" onclick="abrirGaleria(['imagens/1.png','imagens/2.png','imagens/3.png'])">
+                        <img src="imagens/1.png" alt="Baby's Room">
+                        <div class="project-overlay"><span>EXPLORAR</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Baby's Room</h4>
+                        <p>Conforto e sensibilidade em cada detalhe.</p>
+                    </div>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="project-block reveal">
+                    <div class="project-visual" onclick="abrirGaleria(['imagens/5.jpg','imagens/a.png','imagens/6.jpg'])">
+                        <img src="imagens/5.jpg" alt="Casa de Campo">
+                        <div class="project-overlay"><span>EXPLORAR</span></div>
+                    </div>
+                    <div class="project-info">
+                        <h4>Casa de Campo</h4>
+                        <p>Integração total com a natureza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5548996593621?text=Ola%2C%20Carolina%20que%20tal%20realizarmos%20mais%20um%20projeto%3F" 
    class="whatsapp-float" 
    target="_blank">
 
@@ -108,78 +110,53 @@
     </svg>
 
 </a>
-<!-- MODAL -->
-<div id="modalGaleria" class="modal">
-    <span class="close-modal" onclick="fecharGaleria()">FECHAR ✕</span>
 
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper" id="wrapperFotos"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+    <!-- MODAL -->
+    <div id="modalGaleria" class="modal">
+        <span class="close-modal" onclick="fecharGaleria()">✕ FECHAR</span>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper" id="wrapperFotos"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     </div>
-</div>
 
-<!-- JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <footer class="main-footer">
+        <div class="container-editorial">
+            <p>&copy; 2026 Carolina Vitniski. Powered by <span>VN systems</span></p>
+        </div>
+    </footer>
 
-<script>
-AOS.init({ once: true });
-
-let swiperInstance = null;
-
-function abrirGaleria(fotos) {
-    const wrapper = document.getElementById('wrapperFotos');
-    wrapper.innerHTML = fotos.map(f => `<div class="swiper-slide"><img src="${f}"></div>`).join('');
-
-    document.getElementById('modalGaleria').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-
-    if(swiperInstance) swiperInstance.destroy(true, true);
-
-    swiperInstance = new Swiper(".mySwiper", {
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
-        effect: 'fade'
-    });
-}
-
-function fecharGaleria() {
-    document.getElementById('modalGaleria').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-/* REVEAL + PARALLAX */
-const elements = document.querySelectorAll('.reveal');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('active');
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Modal & Swiper
+        let swiperInstance = null;
+        function abrirGaleria(fotos) {
+            const wrapper = document.getElementById('wrapperFotos');
+            wrapper.innerHTML = fotos.map(f => `<div class="swiper-slide"><img src="${f}"></div>`).join('');
+            document.getElementById('modalGaleria').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            if(swiperInstance) swiperInstance.destroy(true, true);
+            swiperInstance = new Swiper(".mySwiper", {
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                effect: 'fade',
+                speed: 800
+            });
         }
-    });
-}, { threshold: 0.2 });
 
-elements.forEach(el => observer.observe(el));
+        function fecharGaleria() {
+            document.getElementById('modalGaleria').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
 
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    document.querySelectorAll('.parallax').forEach(el => {
-        el.style.transform = `translateY(${scrollY * 0.1}px)`;
-    });
-});
-</script>
-
-<footer class="main-footer">
-    <div class="footer-container">
-                
-        <p class="copyright">
-            &copy; 2026 Carolina Vitniski. Todos os direitos reservados.
-        </p>
-        <p class="dev-by">powered by <span>VN systems</span></p>
-    </div>
-</footer>
+        // Observer para Transições Suaves
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
